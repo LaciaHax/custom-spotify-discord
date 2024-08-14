@@ -1,6 +1,6 @@
 /**
  * @name Custom spotify discord++ (raw)
- * @version 1.0.4
+ * @version 1.0.5
  * @description discord visuals to like a spotify
  * @author Lacia
  */
@@ -502,9 +502,6 @@
  
  .member_a31c43 {
    background-color: transparent;
- }
- .member_a31c43 .layout_e9f61e {
-   border-radius: var(--menu-item-radius);
  }
  .member_a31c43:hover .layout_e9f61e {
    background-color: var(--background-tinted-hover);
@@ -4334,6 +4331,8 @@
    background-color: var(--app-background);
  }
  
+/* lacia */
+
  .contentRegion_c25c6d {
    margin: var(--app-card-top-margin) var(--app-card-margin) var(--app-card-margin) 0;
    background-color: var(--app-foreground);
@@ -4419,25 +4418,27 @@
    display: flex;
    margin-right: 1.5vw;
    border-radius: 2px;
+   transform: scale(0.9);
    opacity: 0;
-   transition: border-radius 0.4s ease, opacity 0.2s ease;
+   transition: border-radius 0.4s ease, opacity 0.2s ease, transform 0.5s ease;
  }
  
  .messageListItem_d5deea {
-   transition: border-radius 0.4s ease;
+   transition: border-radius 0.4s ease, transform 0.6s ease;
  }
  
  .messageListItem_d5deea:hover .wrapper_f7e168{
+  transform: scale(1.1);
    border-radius: 30px;
    opacity: 1;
-   transition: border-radius 0.4s ease, opacity 0.2s ease;
+   transition: border-radius 0.4s ease, opacity 0.2s ease, transform 0.5s ease;
  }
  
  .messageListItem_d5deea .message_d5deea,
  .quotedChatMessage_d5deea .message_d5deea {
    margin-right: 1vw;
    margin-left: 1vw;
-   transition: background-color 0.4s ease, transform 0.4s ease;
+   transition: background-color 0.4s ease, transform 0.5s ease;
  }
  
  .messageListItem_d5deea .message_d5deea:hover,
@@ -4445,7 +4446,64 @@
    transform: scale(1.05);
    transition: background-color 0.4s ease, transform 0.4s ease;
  }
+
+ .channelTextArea_a7d72e {
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.channelTextArea_a7d72e:hover,
+.channelTextArea_a7d72e:focus {
+  transform: scale(1.05);
+}
+
+.channelAppLauncher_df39bd {
+  margin-left: 2vw;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.channelAppLauncher_df39bd:hover {
+  transform: scale(1.1);
+}
  
+.attachButtonPlus_f298d4 {
+  transition: transform 1s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transform: rotate(0deg);
+}
+
+.attachButtonPlus_f298d4:hover {
+  transform: rotate(180deg);
+}
+
+.attachButtonPlus_f298d4:not(:hover) {
+  transform: rotate(-180deg);
+}
+
+.member_a31c43 {
+  z-index: 0;
+  border-radius: 5px;
+  transform: scale(0.98);
+  transition: background-color 0.4s ease, color 0.4s ease, transform 0.6s ease-out, border-radius 0.6s ease;
+}
+
+.member_a31c43:hover,
+.layout_d808b0 {
+  border-radius: 30px;
+  transform: scale(1);
+  transition: background-color 0.4s ease, color 0.4s ease, transform 0.6s ease-out, border-radius 0.6s ease;
+}
+
+.containerDefault_f6f816 div{
+  transform: scale(0.99);
+  transition: background-color 0.4s ease, color 0.4s ease, transform 0.4s ease-out;
+}
+
+.containerDefault_f6f816 div:hover{
+  transform: scale(1.01);
+  transition: background-color 0.4s ease, color 0.4s ease, transform 0.4s ease-out;
+}
+
  .scrollerInner_e2e187 li {
    opacity: 0;
    max-height: 0;
@@ -4525,6 +4583,25 @@
    display: flex;
    flex-direction: column;
  }
+
+ ::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  transition: background-color 0.5s, color 0.5s;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.managedReactiveScroller_c49869 ::-webkit-scrollbar-thumb,
+.managedReactiveScroller_c49869 ::-webkit-scrollbar-track {
+  border-radius: 6px;
+}
  
  /*
   *
